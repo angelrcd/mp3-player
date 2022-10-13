@@ -1,3 +1,5 @@
+import { songList } from "./musicControl";
+
 const showPlaylistButton = document.querySelector(".playlist-button");
 const playlistSelector = document.querySelector(".playlist");
 

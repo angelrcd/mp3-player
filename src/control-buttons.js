@@ -1,4 +1,6 @@
+import { songList, audio, currentSong, pause, play, updateMusicSource } from "./musicControl.js";
 const playButtonSelector = document.querySelector(".play-button");
+updateMusicSource(songList[0].url);
 
 function setToPlayIcon() {
   playButtonSelector.classList.remove("playing");
@@ -17,7 +19,13 @@ function isPlaying() {
 playButtonSelector.addEventListener("click", () => {
   if (isPlaying()) {
     setToPlayIcon();
+    pause();
   } else {
     setToPauseIcon();
+    play();
   }
+});
+
+audio.addEventListener("ended", () => {
+  updateMusicSource(updateMusicSource(songList[1].url));
 });
