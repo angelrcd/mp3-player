@@ -35,12 +35,51 @@ body {
 .playlist {
   height: 300px;
   width: 350px;
-  background-color: rgb(146 146 146);
+  background-color: #d8d5e3;
   opacity: 1;
   transition: 0.5s;
   position: relative;
   bottom: -10px;
   box-shadow: 2px 2px 5px #0c0329;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.playlist button {
+  background: transparent;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: solid 1px black;
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.playlist button:first-child {
+  border-top: solid 1px black !important;
+}
+
+.playlist button:hover {
+  background: #c9c7db;
+  font-size: 1em;
+}
+
+.selected {
+  background:
+    linear-gradient(
+      90deg,
+      rgb(216 213 227 / 100%) 0%,
+      rgb(203 200 220 / 100%) 10%,
+      rgb(201 199 219 / 100%) 50%,
+      rgb(203 201 220 / 100%) 90%,
+      rgb(216 213 227 / 100%) 100%
+    ) !important;
 }
 
 .art-box {
@@ -98,14 +137,14 @@ body {
 
 .playlist-is-open {
   opacity: 0.95;
-  background: rgb(146 146 146);
+  background: #d8d5e3;
   transform: rotate(90deg);
 }
 
 .controls-box {
   height: 30%;
   width: 100%;
-  background: white;
+  background: #fffeff;
   display: flex;
   flex-direction: column;
 }
