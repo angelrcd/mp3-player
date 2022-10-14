@@ -1,10 +1,12 @@
 import { songsTitles } from "./SongList.js";
 import * as audioControls from "./audioControl.js";
-import { audio, setCurrentPosition } from "./index.js";
+import { audio } from "./index.js";
 import { setToPauseIcon } from "./control-buttons.js";
 
 const showPlaylistButton = document.querySelector(".playlist-button");
 const playlistSelector = document.querySelector(".playlist");
+const nextSongButtonSelector = document.querySelector(".next-song-button");
+const previousSongButtonSelector = document.querySelector(".previous-song-button");
 
 // Añade el título de las canciones en la playlist
 songsTitles.forEach(title => {
@@ -46,7 +48,16 @@ selectSongButtons.forEach(function callback(selectSongButton, index) {
     audioControls.setAudioSrc(audio, index);
     audioControls.play(audio);
     setToPauseIcon();
-    setCurrentPosition(index);
-    console.log(index); // logea el index
+    audioControls.setCurrentPosition(index);
   });
+});
+
+previousSongButtonSelector.addEventListener("click", () => {
+  removeAllSelectedClasses();
+  selectSongButtons[audioControls.currentPosition].classList.add("selected");
+});
+
+nextSongButtonSelector.addEventListener("click", () => {
+  removeAllSelectedClasses();
+  selectSongButtons[audioControls.currentPosition].classList.add("selected");
 });
