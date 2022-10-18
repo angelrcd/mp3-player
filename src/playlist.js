@@ -16,6 +16,7 @@ songsTitles.forEach(title => {
 });
 
 const selectSongButtons = document.querySelectorAll(".playlist button");
+selectSongButtons[0].classList.add("selected");
 
 showPlaylistButton.addEventListener("click", () => {
   if (showPlaylistButton.classList.contains("playlist-is-closed")) {

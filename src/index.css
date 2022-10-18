@@ -85,10 +85,16 @@ body {
 .art-box {
   height: 55%;
   width: 100%;
-  background: #000;
+  background: rgb(117 117 117);
   display: flex;
   flex-wrap: wrap;
   z-index: 5;
+}
+
+.thumbnail {
+  position: absolute;
+  width: 350px;
+  height: 330px;
 }
 
 .art {
@@ -109,6 +115,21 @@ body {
 
 .bottom-right p {
   align-self: flex-end;
+}
+
+.current-time {
+  z-index: 9999;
+  color: white;
+  background: linear-gradient(90deg, rgb(0 0 0 / 52.1%) 70%, rgb(216 213 227 / 0%) 100%);
+  width: 30%;
+}
+
+.song-duration {
+  z-index: 9999;
+  color: white;
+  background: linear-gradient(260deg, rgb(0 0 0 / 52.1%) 70%, rgb(216 213 227 / 0%) 100%);
+  width: 30%;
+  text-align: end;
 }
 
 .playlist-button {
@@ -195,7 +216,7 @@ body {
 .status-box {
   height: 15%;
   width: 100%;
-  background: rgb(91 128 135);
+  background: #d8d5e3;
   display: flex;
   justify-content: center;
   align-items: center;

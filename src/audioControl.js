@@ -1,4 +1,5 @@
 import { songsUrls } from "./SongList.js";
+import { insertAllData } from "./songDataDisplay.js";
 
 export let currentPosition;
 
@@ -18,6 +19,7 @@ export const pause = (audio) => {
 export const setAudioSrc = (audio, positionNumber) => {
   audio.src = songsUrls[positionNumber];
   setCurrentPosition(positionNumber);
+  insertAllData(positionNumber);
 };
 
 export const setFirstSong = (audio) => {
